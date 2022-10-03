@@ -14,16 +14,6 @@ let package = Package(
     ],
     dependencies: [],
     targets: [
-        .target(
-            name: "OpenCV",
-            dependencies: ["opencv2"],
-            path: "opencv/modules/core/misc/objc/swift-package-manager/Sources",
-            linkerSettings: [
-                .linkedLibrary("c++"),
-                .linkedFramework("Accelerate"),
-                .linkedFramework("OpenCL", .when(platforms: [.macOS]))
-            ]
-        ),
         // Recompute checksum via `swift package --package-path /path/to/opencv compute-checksum /path/to/opencv2.xcframework.zip`
         .binaryTarget(
             name: "opencv2",
